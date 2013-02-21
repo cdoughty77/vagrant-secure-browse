@@ -1,17 +1,19 @@
-Vagrant secure browse
+Description
 ==============
 
-An attempt to easily make a vm that can be used for any of the below:
+I had the realization after reading several articles that many machines these days can have keyloggers on them for various reasons.
+
+With that in mind, this is an experimental project in an attempt to easily make a vm that can be used for any of the below:
 
 * Secure browsing using a pre-configured browser
 * Mounting secure truecrypt drives
-* Loading KeePass databases(or other password management tools)
+* Loading password management tools (such as keepass, lastpass or 1password) which might automatically enter private credentials
 * Other tasks where keyloggers or a trusted clean system are desired.
 
 Usage
 =====
 
-To get started, simply edit the Vagrant file and/or provision script if desired and type:
+To start/configure a default Ubuntu 12.04 system:
 <pre>
 vagrant up
 </pre>
@@ -22,19 +24,20 @@ vagrant destroy
 vagrant up
 </pre>
 
+To change the default OS simply go to the following site to find a pre-packaged vagrant box: http://www.vagrantbox.es/ then change the URL specified in the Vagrantfile. Any changes to the OS may also require changes to the provision script as well.
+
 Dependencies
 ============
 
 * Vagrant (v1.0.5 or higher)
 * VirtualBox (v4.2.6 or higher)
-* Uses Ubuntu 12.04 image unless Vagrantfile is modified(See pre-packaged boxes:  http://www.vagrantbox.es/)
 
 Disclaimer
 ==========
 
 This is provided as-is.  
 
-I've used this posting to auto-add chrome extensions:
+I've used the following posting to auto-add chrome extensions(see provision script for which extensions):
 http://serverfault.com/questions/354606/where-do-i-find-the-update-url-for-google-chrome-extensions
 
 Should you want to modify, please feel free to fork and send a pull request.
