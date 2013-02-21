@@ -1,5 +1,5 @@
-# Install xfce desktop
-aptitude install -y --without-recommends xubuntu-desktop
+# Install xfce desktop, keepassx
+aptitude install -y --without-recommends xubuntu-desktop keepassx
 
 # Get latest patches and fixes
 apt-get -f -y update
