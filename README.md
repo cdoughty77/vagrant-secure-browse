@@ -13,12 +13,12 @@ With that in mind, this is an experimental project in an attempt to easily make 
 Usage
 =====
 
-To start/configure a default Ubuntu 12.04 system:
+To start/configure a default Ubuntu 12.04 system(first boot takes a bit longer as it pulls down the ~250 MB OS image):
 <pre>
 vagrant up
 </pre>
 
-To rebuild back to a trusted base image anytime type:
+To rebuild back to a trusted base image anytime type(should go faster as os image will already be present):
 <pre>
 vagrant destroy
 vagrant up
