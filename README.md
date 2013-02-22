@@ -1,13 +1,13 @@
 Description
 ==============
 
-I had the realization after reading several articles that many machines these days can have keyloggers on them for various reasons.
+I had the realization after reading several articles that many machines these days can have [keyloggers](http://en.wikipedia.org/wiki/Keystroke_logging) on them for various reasons.
 
 With that in mind, this is an experimental project in an attempt to easily make a vm that can be used for any of the below:
 
-* Secure browsing using a pre-configured browser
-* Mounting secure truecrypt drives
-* Loading password management tools (such as keepass, lastpass or 1password) which might automatically enter private credentials
+* [Secure browsing](http://support.google.com/chrome/bin/answer.py?hl=en&answer=95464) using a pre-configured browser
+* Mounting secure [truecrypt](http://www.truecrypt.org/) drives
+* Loading password management tools (such as [keepass](http://www.keepassx.org/), [lastpass](http://lastpass.com/) or [1password](https://agilebits.com/onepassword)) which might automatically enter private credentials
 * Other tasks where keyloggers or a trusted clean system are desired.
 
 Usage
@@ -29,8 +29,8 @@ To change the default OS simply go to the following site to find a pre-packaged 
 Dependencies
 ============
 
-* Vagrant (v1.0.5 or higher)
-* VirtualBox (v4.2.6 or higher)
+* [Vagrant](http://www.vagrantup.com/) (v1.0.5 or higher)
+* [VirtualBox](https://www.virtualbox.org/) (v4.2.6 or higher)
 
 Disclaimer
 ==========
