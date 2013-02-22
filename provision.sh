@@ -1,11 +1,11 @@
-# Install xfce desktop, keepassx
-aptitude install -y --without-recommends xubuntu-desktop keepassx
+# Install xfce desktop, keepassx, and expect
+aptitude install -y --without-recommends xubuntu-desktop keepassx expect
 
 # Get latest patches and fixes
 apt-get -f -y update
 
 # Install chrome browser
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+wget -N https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i ./google-chrome-stable_current_amd64.deb
 apt-get -f -y install
 
@@ -13,7 +13,7 @@ apt-get -f -y install
 alias google-chrome="google-chrome --incognito"
 
 # Add some default extensions
-mkdir /opt/google/chrome/extensions
+mkdir /opt/google/chrome/extensions > /dev/null 2>&1
 
 # Add WOT extension: https://chrome.google.com/webstore/detail/wot/bhmmomiinigofkjcapegjjndpbikblnp?hl=en
 cat > /opt/google/chrome/extensions/bhmmomiinigofkjcapegjjndpbikblnp.json << EOF
@@ -39,5 +39,32 @@ EOF
 # Now give appropriate rights to files/dir
 chmod -R 777 /opt/google/chrome/extensions
 
-# Reboot system
-reboot
+# Get truecrypt and install
+wget -N http://www.truecrypt.org/download/truecrypt-7.1a-linux-x86.tar.gz
+
+# Untar the package
+tar -xvf truecrypt-7.1a-linux-x86.tar.gz
+
+# Now install it using expect
+VAR=$(expect -c '
+set force_conservative 0  ;
+if {$force_conservative} {
+        set send_slow {1 .1}
+        proc send {ignore arg} {
+                sleep .1
+                exp_send -s -- $arg
+        }
+}
+set timeout -1
+spawn ./truecrypt-7.1a-setup-x86
+match_max 100000
+expect -exact "To select, enter 1 or 2: "
+send -- "1\r"
+expect -exact "Press Enter to display the license terms... "
+send -- "\r"
+send -- "q"
+expect -exact "Do you accept and agree to be bound by the license terms? (yes/no): "
+send -- "yes\r"
+send -- "\r"
+expect eof
+')
