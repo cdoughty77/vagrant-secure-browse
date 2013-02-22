@@ -20,7 +20,7 @@ Vagrant::Config.run do |config|
   config.vm.customize ["modifyvm", :id, "--memory", 1024]
 
   # Install stuff...
-  config.vm.provision :shell, :path => "provisionVagrantBox.sh"
+  config.vm.provision :shell, :path => "provision.sh"
 
   # Assign this VM to a host-only network IP, allowing you to access it
   # via the IP. Host-only networks can talk to the host machine as well as
