@@ -40,10 +40,10 @@ EOF
 chmod -R 777 /opt/google/chrome/extensions
 
 # Get truecrypt and install
-wget -N http://www.truecrypt.org/download/truecrypt-7.1a-linux-x86.tar.gz
+wget -N http://www.truecrypt.org/download/truecrypt-7.1a-linux-x64.tar.gz
 
 # Untar the package
-tar -xvf truecrypt-7.1a-linux-x86.tar.gz
+tar -xvf truecrypt-7.1a-linux-x64.tar.gz
 
 # Now install it using expect
 VAR=$(expect -c '
@@ -56,7 +56,7 @@ if {$force_conservative} {
         }
 }
 set timeout -1
-spawn ./truecrypt-7.1a-setup-x86
+spawn ./truecrypt-7.1a-setup-x64
 match_max 100000
 expect -exact "To select, enter 1 or 2: "
 send -- "1\r"
