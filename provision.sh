@@ -1,16 +1,10 @@
-# Install xfce desktop, keepassx, and expect
+# Install xfce desktop, keepassx and expect
 aptitude install -y --without-recommends xubuntu-desktop keepassx expect
-
-# Get latest patches and fixes
-apt-get -f -y update
 
 # Install chrome browser
 wget -N https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 dpkg -i ./google-chrome-stable_current_amd64.deb
 apt-get -f -y install
-
-# Make not storing local data default
-alias google-chrome="google-chrome --incognito"
 
 # Add some default extensions
 mkdir /opt/google/chrome/extensions > /dev/null 2>&1
@@ -68,3 +62,16 @@ send -- "yes\r"
 send -- "\r"
 expect eof
 ')
+
+# Add oracle java 7
+add-apt-repository -y ppa:webupd8team/java
+apt-get update
+echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections
+apt-get -f -y install oracle-java7-installer
+
+# Reboot once and only once
+if [ ! -e ~/.completedFirstSetup ]
+then
+    touch ~/.completedFirstSetup
+    reboot
+fi
