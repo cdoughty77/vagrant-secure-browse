@@ -1,9 +1,7 @@
 Description
 ==============
 
-I had the realization after reading several articles that many machines these days can have [keyloggers](http://en.wikipedia.org/wiki/Keystroke_logging) on them for various reasons.
-
-With that in mind, this is an experimental project in an attempt to easily make a vm that can be used for any of the below:
+After reading several articles about [keyloggers](http://en.wikipedia.org/wiki/Keystroke_logging), this experimental project was born in an attempt to easily make a vm that can be used for any of the below:
 
 * [Secure browsing](http://support.google.com/chrome/bin/answer.py?hl=en&answer=95464) using a pre-configured browser
 * Mounting secure [truecrypt](http://www.truecrypt.org/) drives
