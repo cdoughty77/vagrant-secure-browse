@@ -1,5 +1,5 @@
-# Install xfce desktop, keepassx and expect
-aptitude install -y --without-recommends xubuntu-desktop keepassx expect
+# Install xfce desktop, keepassx, expect and onscreen an keyboard
+aptitude install -y --without-recommends xubuntu-desktop keepassx expect onboard
 
 # Install chrome browser
 wget -N https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
