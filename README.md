@@ -5,13 +5,13 @@ After reading several articles about [keyloggers](http://en.wikipedia.org/wiki/K
 
 * [Secure browsing](http://support.google.com/chrome/bin/answer.py?hl=en&answer=95464) using a pre-configured browser
 * Mounting secure [truecrypt](http://www.truecrypt.org/) drives
-* Loading password management tools (such as [keepass](http://www.keepassx.org/), [lastpass](http://lastpass.com/) or [1password](https://agilebits.com/onepassword)) which might automatically enter private credentials
+* Loading password management tools (such as [keepass](http://www.keepassx.org/), [lastpass](http://lastpass.com/) or [1password](https://agilebits.com/onepassword)) to automatically enter private credentials
 * Other tasks where keyloggers or a trusted clean system are desired.
 
 Tips
 ====
 
-* **Disable clipboard sharing** - If using this setup with a password management tool(such as keepass), [disable clipboard sharing in virtualbox](http://www.virtuatopia.com/index.php/Configuring_VirtualBox_Virtual_Machine_Settings#Advanced_Settings) to protect any passwords autotyped by the tool from any keylogger watching the clipboard on the host OS.
+* **Disable clipboard sharing** - If using a password management tool(such as keepass), [disable clipboard sharing in virtualbox](http://www.virtuatopia.com/index.php/Configuring_VirtualBox_Virtual_Machine_Settings#Advanced_Settings) to protect any passwords autotyped by the tool from any keylogger watching the clipboard on the host OS.
 * **Use onscreen keyboard for passwords** - Use a virtual onscreen keyboard (such as [onboard in Ubuntu](http://www.iloveubuntu.net/ubuntus-default-virtual-keyboard-onboard-097-released-new-themes-behavior-enhancements-and-numerous)) to type any passwords into the vm, so that the any keylogger on the host OS will only detect mouse clicks instead of the password being entered.
 
 Usage
