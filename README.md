@@ -1,9 +1,9 @@
 Description
 ==============
 
-After reading several articles about [keyloggers](http://en.wikipedia.org/wiki/Keystroke_logging), this experimental project was born in an attempt to easily make a vm that can be used for any of the below:
+After reading several articles about [keyloggers](http://en.wikipedia.org/wiki/Keystroke_logging), this experimental project was born in an attempt to easily make a vm(or quickly rebuild) that can be used for any of the below:
 
-* [Secure browsing](http://support.google.com/chrome/bin/answer.py?hl=en&answer=95464) using a pre-configured browser
+* [Secure browsing](http://support.google.com/chrome/bin/answer.py?hl=en&answer=95464) for entering private data such as user credentials or credit card information.
 * Mounting secure [truecrypt](http://www.truecrypt.org/) drives
 * Loading password management tools (such as [keepass](http://www.keepassx.org/), [lastpass](http://lastpass.com/) or [1password](https://agilebits.com/onepassword)) to automatically enter private credentials
 * Other tasks where keyloggers or a trusted clean system are desired.
@@ -11,8 +11,8 @@ After reading several articles about [keyloggers](http://en.wikipedia.org/wiki/K
 Tips
 ====
 
-* **Disable clipboard sharing** - If using a password management tool(such as keepass), [disable clipboard sharing in virtualbox](http://www.virtuatopia.com/index.php/Configuring_VirtualBox_Virtual_Machine_Settings#Advanced_Settings) to protect any passwords autotyped by the tool from any keylogger watching the clipboard on the host OS.
-* **Use onscreen keyboard for passwords** - Use a virtual onscreen keyboard (such as [onboard in Ubuntu](http://www.iloveubuntu.net/ubuntus-default-virtual-keyboard-onboard-097-released-new-themes-behavior-enhancements-and-numerous)) to type any passwords into the vm, so that the any keylogger on the host OS will only detect mouse clicks instead of the password being entered.
+* **Disable clipboard sharing** - If using a password management tool(such as keepass), [disable clipboard sharing in virtualbox](http://www.virtuatopia.com/index.php/Configuring_VirtualBox_Virtual_Machine_Settings#Advanced_Settings) to protect any passwords autotyped by the tool from a keylogger watching the clipboard on the host OS.
+* **Use onscreen keyboard for secure information** - Use a virtual onscreen keyboard (such as [onboard in Ubuntu](http://www.iloveubuntu.net/ubuntus-default-virtual-keyboard-onboard-097-released-new-themes-behavior-enhancements-and-numerous)) to type any secure information such as credit card detail or passwords into the vm.  The reason being that the any keylogger on the host OS will only detect mouse clicks instead of the actual data being entered.
 
 Usage
 =====
@@ -20,6 +20,11 @@ Usage
 To start/configure a default Ubuntu 12.04 system(first boot takes a bit longer as it pulls down the ~250 MB OS image):
 <pre>
 vagrant up
+</pre>
+
+To stop the default image anytime(from the host OS):
+<pre>
+vagrant halt
 </pre>
 
 To rebuild back to a trusted base image anytime type(should go faster as os image will already be present):
